@@ -8,3 +8,4 @@ The program consists of a driver method main that will call all of the psuedoran
 Generation Algorithms used:
 - Middle Squares Method
 - Lehmer Method
+- Linear Congruential Method
