@@ -5,3 +5,4 @@ This program includes no GUI interface and is compleatly console runnable. It wi
 The program consists of a driver method main that will call all of the psuedorandom generator methods listed below. At this point all of the generator methods are contained within the driver class, so that's really the only file you need.
 Generation Algorithms used:
 - Middle Squares Method
+- Lehmer Method
