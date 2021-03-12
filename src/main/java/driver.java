@@ -17,7 +17,8 @@ public class driver
         System.out.println("Middle Squares string is: "+MiddleSquares(seed));
         System.out.println("Lehmer string is: "+Lehmer(seed));
         System.out.println("Linear Congruential string is: "+LinearCongruential(seed));
-        //System.out.println("xxxx string is: "+xxxx(seed, limit));
+        System.out.println("Inversive Congruential Generator string is: "+InversiveCongruentialGenerator(seed));
+        //System.out.println("xxxx string is: "+xxxx(seed));
     }
 
     public static String MiddleSquares(int seed)
@@ -56,7 +57,7 @@ public class driver
         return out;
     }
     public static String LinearCongruential(int seed)
-    {
+    {   //Schrage's method of linear congruential generator. This is a generalization of Lehmer
         String out = "", temp = "";
         int current = seed, loops = 0, a=0, mod=0,r=0, q=0;
         System.out.print("Please enter a non-prime integer: ");
@@ -74,17 +75,35 @@ public class driver
         }
         return out;
     }
-    public static String xxxx(int seed, String limit)
+    public static String InversiveCongruentialGenerator(int seed)
     {
         String out="", temp="";
-        int current = seed*seed, loops = 0, max=0;
+        int current = seed, loops = 0, mod=0, i=1, j=2, base=0;
+        System.out.print("Please enter an integer to modulus: ");
+        mod = in.nextInt();
+        System.out.print("Please enter an integer for a base case: ");
+        base = in.nextInt();
+        while (j<=mod && loops<max)
+        {
+            if(current==0)
+                current = base;
+            else
+                current = (int) (Math.pow(current, i)+ Math.pow(current,j)) % mod;
+            temp=current+"";
+            out=out+temp;
+            loops++;
+        }
+        return out;
+    }
+    public static String xxxx(int seed)
+    {
+        String out="", temp="";
+        int current = seed, loops = 0;
 
-        while (current!=seed && loops < max)
+        while ((current!=seed || loops==0) && loops < max)
         {
             temp=current+"";
-            //do work
             out=out+temp;
-            current = Integer.parseInt(temp);
             //next step
             loops++;
         }

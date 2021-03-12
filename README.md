@@ -9,3 +9,4 @@ Generation Algorithms used:
 - Middle Squares Method
 - Lehmer Method
 - Linear Congruential Method
+- Inversive Congruential Method
