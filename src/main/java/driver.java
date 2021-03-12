@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 public class driver
 {
@@ -49,7 +48,7 @@ public class driver
 
     public static String MiddleSquares(int seed)
     {   //low quality PRNG; is mostly of historical merit. Developed by VonNeumann
-        String out="", temp="";
+        String out="", temp;
         int current = seed*seed, loops = 0;
 
         while (current!=seed && loops < max)
@@ -57,7 +56,7 @@ public class driver
             temp=current+"";
             int l = temp.length()-3;
             temp = temp.substring(l/2,temp.length()-(l/2));
-            out=out+temp;
+            out += temp;
             current = Integer.parseInt(temp);
             current=current*current;
             loops++;
@@ -66,13 +65,13 @@ public class driver
     }
     public static String Lehmer(int seed, int m, int a)
     {   //another very early PRNG algorithm
-        String out="", temp="";
+        String out="", temp;
         int current = seed, loops = 0;
 
         while ((current!=seed || loops==0) && loops < max)
         {
             temp=Math.abs(current)+"";
-            out=out+temp;
+            out += temp;
             current=(a*current)%m;
             loops++;
         }
@@ -80,22 +79,22 @@ public class driver
     }
     public static String LinearCongruential(int seed, int mod, int a)
     {   //Schrage's method of linear congruential generator. This is a generalization of Lehmer
-        String out = "", temp = "";
-        int current = seed, loops = 0,r=0, q=0;
+        String out = "", temp;
+        int current = seed, loops = 0,r, q;
         r=mod%a;
         q=(mod-r)/a;
         while ((current!=seed || loops==0) && loops < max)
         {
             current = a*(current%q)-r%mod;
             temp = Math.abs(current) + "";
-            out = out + temp;
+            out += temp;
             loops++;
         }
         return out;
     }
     public static String InversiveCongruentialGenerator(int seed, int mod, int base)
     {
-        String out="", temp="";
+        String out="", temp;
         int current = seed, loops = 0, i=1, j=2;
         while (j<=mod && loops<max)
         {
@@ -104,7 +103,7 @@ public class driver
             else
                 current = (int) (Math.pow(current, i)+ Math.pow(current,j)) % mod;
             temp=current+"";
-            out=out+temp;
+            out += temp;
             loops++;
         }
         return out;
