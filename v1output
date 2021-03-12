@@ -1,0 +1,15 @@
+Output sample for v1
+
+Enter a seed: 232
+Enter an upper limit of loops or -1 for a full pattern: 10
+Seed entered was: 232
+Middle Squares string is: 3824592086446496132601416812576046481
+Please enter a large prime integer: 13
+Please enter an integer: 485
+Lehmer string is: 2325728611572
+Please enter a non-prime integer: 472392
+Please enter an integer less than or equal to 687 :463
+Linear Congruential string is: 107284850601850682072921072848506018506820729210728485060
+Please enter an integer to modulus: 382
+Please enter an integer for a base case: 4759
+Inversive Congruential Generator string is: 19412156447042038336160
