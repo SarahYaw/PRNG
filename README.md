@@ -3,7 +3,9 @@ Here is a program of different PRNG algorithms researched and coded up by @3l1zz
 
 This program includes no GUI interface and is compleatly console runnable. It will as for a seed and a maximum number any loops are allowed to run for. If -1 is entered, they will continue until the period is over for the entered seed. Please enter a seed that is at lease three digits long, there is no input error checking at this time. At this point all of the generator methods are contained within the driver class, so that's really the only file you need.
 
-The program consists of a driver method main that will call all of the psuedorandom generator methods listed below. Each method may ask for additional input from the user, please stick to using positive integers, again, there is no error checking. 
+The program consists of a driver method main that will call all of the psuedorandom generator methods listed below. The inputted seed is run through the middle squares method of generation until the set cap. The output is then divided and used to seed the Lehmer method whose output feeds the Inverse Congruential method, who feeds the Linear congruential method. The output is a very long string of numbers.
+
+It is highly reccomended you use a cap inseted of letting the full pattern compleate because the middle squares algorithm is very long and does not output until the entire period has finished. The cap will ensure an upper time limit.
 
 Generation Algorithms used:
 - Middle Squares Method
